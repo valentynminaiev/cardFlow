@@ -1,8 +1,6 @@
-import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
+import React from "react";
+import AppNavigator from "./src/navigationConfig";
 
-export default class App extends Component {
-  render() {
-    return <View />;
-  }
-}
+const App = () => <AppNavigator />;
+
+export default App;
