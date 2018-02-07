@@ -10,11 +10,12 @@ const StyledText = styled.Text`
   color: ${props => (props.secondary ? gray : primaryBlack)};
   fontWeight: ${props => (props.primary ? "bold" : "normal")};
   fontSize: 36;
+  textAlign: center;
 `;
 
-export default ({ children }) => (
+export default props => (
   <StyledView>
-    <StyledText>{children}</StyledText>
+    <StyledText {...props}>{props.children}</StyledText>
   </StyledView>
 );
 
