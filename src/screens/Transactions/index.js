@@ -1,17 +1,15 @@
 import React from "react";
-import { View } from "react-native";
-import s from "./styles";
+import Container from "../../components/Container";
 import Text from "../../components/Text";
-export default class TransactionsScreen extends React.Component {
-  static navigationOptions = {
-    title: "Transactions"
-  };
 
-  render() {
-    return (
-      <View style={s.container}>
-        <Text primary>Transactions</Text>
-      </View>
-    );
-  }
-}
+const TransactionsScreen = () => (
+  <Container>
+    <Text primary>Transactions</Text>
+  </Container>
+);
+
+TransactionsScreen.navigationOptions = {
+  title: "Transactions"
+};
+
+export default TransactionsScreen;
