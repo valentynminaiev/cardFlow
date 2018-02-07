@@ -1,16 +1,16 @@
 import React from "react";
 import { View } from "react-native";
-import s from "./styles";
 import Text from "../../components/Text";
-export default class TransactionsScreen extends React.Component {
+
+export default class NewCard extends React.Component {
   static navigationOptions = {
-    title: "Transactions"
+    title: "New Card"
   };
 
   render() {
     return (
-      <View style={s.container}>
-        <Text primary>Transactions</Text>
+      <View>
+        <Text primary>Add New Card</Text>
       </View>
     );
   }
