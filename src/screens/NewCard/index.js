@@ -17,12 +17,15 @@ export default class NewCard extends React.Component {
   };
 
   render() {
+    const { params } = this.props.navigation.state;
+    const selectedCurrency = params ? params.currency : "Choose currency";
+
     return (
       <Container padding>
         <Card />
         <SettingsRow
           label="Card currency:"
-          title="Choose currency"
+          title={selectedCurrency}
           onPress={this.handleChooseCurrency}
         />
         <ColorPicker onPress={() => console.log("press")} />

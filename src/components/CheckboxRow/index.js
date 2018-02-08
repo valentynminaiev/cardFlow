@@ -8,7 +8,9 @@ import checkIcon from "../../assets/images/check-icon.png";
 
 export default props => (
   <ContainerView>
-    <StyledTouchableView onPress={() => props.onPress(props.id)}>
+    <StyledTouchableView
+      onPress={() => props.onPress({ title: props.title, id: props.id })}
+    >
       <StyledCheckbox checked={props.checked}>
         {props.checked && <CheckIcon source={checkIcon} />}
       </StyledCheckbox>

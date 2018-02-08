@@ -1,7 +1,8 @@
 import React from "react";
+
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { defaultSize, defaultMargin } from "../../theme/fonts";
+import { defaultSize, defaultMargin, defaultPadding } from "../../theme/fonts";
 import { white, blue } from "../../theme/colors";
 
 const StyledView = styled.TouchableOpacity`
@@ -11,6 +12,10 @@ const StyledView = styled.TouchableOpacity`
   border-radius: ${props => (props.rounded ? 55 : 10)};
   margin-vertical: ${defaultMargin};
   align-self: stretch;
+  left: 0;
+  right: 0;
+  bottom: ${defaultPadding / 2};
+  position: ${props => (props.absolute ? "absolute" : "relative")};
 `;
 
 const StyledText = styled.Text`
