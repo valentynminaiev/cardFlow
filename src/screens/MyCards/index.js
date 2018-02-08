@@ -18,7 +18,7 @@ export default class MyCardsScreen extends React.Component {
   handleAddNewCard = () => {
     const { navigate } = this.props.navigation;
 
-    navigate("newCard");
+    navigate("NewCard");
   };
 
   render() {

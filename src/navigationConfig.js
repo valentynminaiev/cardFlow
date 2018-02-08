@@ -4,6 +4,7 @@ import { StackNavigator, TabNavigator } from "react-navigation";
 import TransactionsScreen from "./screens/Transactions";
 import MyCardsScreen from "./screens/MyCards";
 import NewCardScreen from "./screens/NewCard";
+import VerifyCardScreen from "./screens/VerifyCard";
 import CurrenciesList from "./screens/CurrenciesList";
 
 const TabNav = TabNavigator({
@@ -13,6 +14,7 @@ const TabNav = TabNavigator({
 
 export default StackNavigator({
   Home: { screen: TabNav },
-  newCard: { screen: NewCardScreen },
-  CurrenciesList: { screen: CurrenciesList }
+  NewCard: { screen: NewCardScreen },
+  CurrenciesList: { screen: CurrenciesList },
+  VerifyCard: { screen: VerifyCardScreen }
 });

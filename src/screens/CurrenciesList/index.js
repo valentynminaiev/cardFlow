@@ -45,7 +45,7 @@ export default class CurrenciesList extends React.Component {
     const { selectedCurrency } = this.state;
     const { replace } = this.props.navigation;
 
-    replace("newCard", { currency: selectedCurrency.title });
+    replace("NewCard", { currency: selectedCurrency.title });
   };
 
   render() {

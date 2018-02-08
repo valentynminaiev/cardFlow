@@ -14,7 +14,11 @@ export default class NewCard extends React.Component {
     navigate("CurrenciesList");
   };
 
-  handleAddToCard = () => {};
+  handleAddToCard = () => {
+    const { navigate } = this.props.navigation;
+
+    navigate("VerifyCard");
+  };
 
   render() {
     const { params } = this.props.navigation.state;
