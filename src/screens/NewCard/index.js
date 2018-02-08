@@ -6,10 +6,6 @@ import SettingsRow from "../../components/SettingsRow";
 import ColorPicker from "../../components/ColorPicker";
 
 export default class NewCard extends React.Component {
-  static navigationOptions = {
-    title: "New Card"
-  };
-
   handleChooseCurrency = () => {
     const { navigate } = this.props.navigation;
 
@@ -33,3 +29,7 @@ export default class NewCard extends React.Component {
     );
   }
 }
+
+NewCard.navigationOptions = ({ navigation }) => ({
+  title: "New Card"
+});

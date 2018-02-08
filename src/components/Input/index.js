@@ -2,20 +2,23 @@ import React from "react";
 import { View, Text } from "react-native";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { primaryBlack, blue, white } from "../../theme/colors";
+import { primaryBlack, blue, white, gray } from "../../theme/colors";
+import { labelSize, large, defaultSize } from "../../theme/fonts";
 
 const StyledView = styled.View``;
 
-const StyledText = styled.Text``;
+const StyledLabel = styled.Text`
+  font-size: ${labelSize};
+  color: ${gray};
+`;
 
 const StyledTextInput = styled.TextInput`
-  height: 40;
-  font-size: ${props => (props.large ? 26 : 16)};
+  font-size: ${props => (props.large ? large : defaultSize)};
 `;
 
 export default props => (
   <StyledView>
-    {props.label && <StyledText>{props.label}</StyledText>}
+    {props.label && <StyledLabel>{props.label}</StyledLabel>}
     <StyledTextInput
       placeholderTextColor={primaryBlack}
       maxLength={props.maxLength || 19}

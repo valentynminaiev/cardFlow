@@ -7,6 +7,7 @@ import Input from "../Input";
 import { defaultMargin, doubleMargin } from "../../theme/fonts";
 import { backgroundGray, primaryBlack } from "../../theme/colors";
 import card from "../../assets/images/card.png";
+import { formatCreditCardNumber, formatExpDate } from "./format";
 
 const ViewContainer = styled.View`
   align-self: stretch;
@@ -21,6 +22,7 @@ const Cardholder = styled.View`
   background-color: transparent;
   align-self: stretch;
   height: 180;
+  padding-horizontal: ${doubleMargin};
   shadow-opacity: 0.15;
   shadow-radius: 8;
   shadow-color: #000;
@@ -32,7 +34,8 @@ const Cardholder = styled.View`
 const BottomRow = styled.View`
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 10;
+  margin-top: 20;
+  margin-bottom: ${defaultMargin};
 `;
 
 const ImageBackground = styled.Image`
@@ -56,20 +59,57 @@ export default class Card extends PureComponent {
     super(props);
 
     this.state = {
-      text: ""
+      cardNumber: null,
+      expDate: null,
+      cvv: null
     };
   }
+
+  onCardNumberInput = text => {
+    this.setState({
+      cardNumber: formatCreditCardNumber(text)
+    });
+  };
+
+  onExpDateInput = text => this.setState({ expDate: formatExpDate(text) });
+
+  onCVVInput = cvv => this.setState({ cvv });
+
   render() {
+    const { cardNumber, expDate, cvv } = this.state;
     return (
       <ViewContainer>
         <Cardholder>
           <ImageBackground source={card} />
           <ColorOverlay color="rgba(0, 0, 0, 0.1)" />
           {/* <ImageBackground source={card}> */}
-          <Input large placeholder="0000 0000 0000 0000" />
+          <Input
+            large
+            placeholder="0000 0000 0000 0000"
+            keyboardType="numeric"
+            returnKeyType="done"
+            onChangeText={this.onCardNumberInput}
+            value={cardNumber}
+          />
           <BottomRow>
-            <Input label="Exp" placeholder="00/00" maxLength={5} />
-            <Input label="CVV" placeholder="XXX" maxLength={3} />
+            <Input
+              label="Exp"
+              placeholder="00/00"
+              maxLength={5}
+              keyboardType="numeric"
+              returnKeyType="done"
+              onChangeText={this.onExpDateInput}
+              value={expDate}
+            />
+            <Input
+              label="CVV"
+              placeholder="XXX"
+              maxLength={3}
+              keyboardType="numeric"
+              returnKeyType="done"
+              onChangeText={this.onCVVInput}
+              value={cvv}
+            />
           </BottomRow>
           {/* </ImageBackground> */}
         </Cardholder>
