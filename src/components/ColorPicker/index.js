@@ -5,11 +5,11 @@ import PropTypes from "prop-types";
 import { primaryBlack, gray } from "../../theme/colors";
 import infoTip from "../../assets/images/info-tip.png";
 import arrowRight from "../../assets/images/arrow-right.png";
+import { labelSize } from "../../theme/fonts";
 
 const ContainerView = styled.View`
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
 `;
 
 const ContainerScrollView = styled.ScrollView`
@@ -18,7 +18,7 @@ const ContainerScrollView = styled.ScrollView`
 `;
 
 const LabelText = styled.Text`
-  font-size: 13;
+  font-size: ${labelSize};
   color: ${gray};
 `;
 
@@ -40,7 +40,7 @@ const ColorView = styled.View`
 export default props => (
   <ContainerView>
     <LabelText>Color:</LabelText>
-    <ContainerView>
+    <ColorsList>
       <ColorView />
       <ColorView />
       <ColorView />
@@ -49,6 +49,6 @@ export default props => (
       <ColorView />
       <ColorView />
       <ColorView />
-    </ContainerView>
+    </ColorsList>
   </ContainerView>
 );

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import Container from "../Container";
 import Input from "../Input";
+import Text from "../Text";
 import { defaultMargin, doubleMargin } from "../../theme/fonts";
 import { backgroundGray, primaryBlack } from "../../theme/colors";
 import card from "../../assets/images/card.png";
@@ -54,6 +55,12 @@ const ColorOverlay = styled.View`
   z-index: -1;
 `;
 
+const CardText = styled.Text`
+  font-size: 26;
+  justify-content: center;
+  align-items: center;
+`;
+
 export default class Card extends PureComponent {
   constructor(props) {
     super(props);
@@ -82,6 +89,7 @@ export default class Card extends PureComponent {
         <Cardholder>
           <ImageBackground source={card} />
           <ColorOverlay color="rgba(0, 0, 0, 0.1)" />
+          {/* <CardText>{cardNumber}</CardText> */}
           {/* <ImageBackground source={card}> */}
           <Input
             large

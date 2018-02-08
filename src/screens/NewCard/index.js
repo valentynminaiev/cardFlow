@@ -4,6 +4,8 @@ import Text from "../../components/Text";
 import Card from "../../components/Card";
 import SettingsRow from "../../components/SettingsRow";
 import ColorPicker from "../../components/ColorPicker";
+import Button from "../../components/Button";
+import { yellow } from "../../theme/colors";
 
 export default class NewCard extends React.Component {
   handleChooseCurrency = () => {
@@ -11,6 +13,8 @@ export default class NewCard extends React.Component {
 
     navigate("CurrenciesList");
   };
+
+  handleAddToCard = () => {};
 
   render() {
     const { params } = this.props.navigation.state;
@@ -25,6 +29,9 @@ export default class NewCard extends React.Component {
           onPress={this.handleChooseCurrency}
         />
         <ColorPicker onPress={() => console.log("press")} />
+        <Button absolute rounded color={yellow} onPress={this.handleAddToCard}>
+          Continue
+        </Button>
       </Container>
     );
   }

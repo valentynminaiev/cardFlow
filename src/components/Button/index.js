@@ -16,6 +16,7 @@ const StyledView = styled.TouchableOpacity`
   right: 0;
   bottom: ${defaultPadding / 2};
   position: ${props => (props.absolute ? "absolute" : "relative")};
+  margin-horizontal: ${props => (props.absolute ? defaultMargin : 0)};
 `;
 
 const StyledText = styled.Text`
