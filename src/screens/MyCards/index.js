@@ -1,10 +1,14 @@
 import React from "react";
-import { Image, View } from "react-native";
+import styled from "styled-components";
 import Container from "../../components/Container";
 import Text from "../../components/Text";
 import StyledButton from "../../components/Button";
 import cardError from "../../assets/images/card-error.png";
-import s from "./styles";
+import { doubleMargin } from "../../theme/fonts";
+
+const Image = styled.Image`
+  margin-bottom: ${doubleMargin};
+`;
 
 export default class MyCardsScreen extends React.Component {
   static navigationOptions = {
@@ -19,8 +23,8 @@ export default class MyCardsScreen extends React.Component {
 
   render() {
     return (
-      <Container center>
-        <Image source={cardError} style={{ marginBottom: 24 }} />
+      <Container center padding>
+        <Image source={cardError} />
         <Text primary>The list is empty!</Text>
         <Text secondary>
           Add your cards to send and receive money instantly
