@@ -15,7 +15,7 @@ export default props => (
         <StyledImage source={infoTip} />
       </PressView>
     </LabelView>
-    <TextView>
+    <TextView onPress={props.onPress}>
       <StyledText>{props.title}</StyledText>
       <ArrowImage source={arrowRight} />
     </TextView>

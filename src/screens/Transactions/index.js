@@ -3,7 +3,7 @@ import Container from "../../components/Container";
 import Text from "../../components/Text";
 
 const TransactionsScreen = () => (
-  <Container>
+  <Container center>
     <Text primary>Transactions</Text>
   </Container>
 );

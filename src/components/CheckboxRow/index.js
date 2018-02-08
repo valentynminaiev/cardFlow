@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet } from "react-native";
+import { TouchableOpacity, StyleSheet } from "react-native";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { doubleMargin } from "../../theme/fonts";
@@ -8,12 +8,18 @@ import checkIcon from "../../assets/images/check-icon.png";
 
 export default props => (
   <ContainerView>
-    <StyledCheckbox checked={props.checked}>
-      {props.checked && <CheckIcon source={checkIcon} />}
-    </StyledCheckbox>
-    <StyledText>{props.title}</StyledText>
+    <StyledTouchableView onPress={() => props.onPress(props.id)}>
+      <StyledCheckbox checked={props.checked}>
+        {props.checked && <CheckIcon source={checkIcon} />}
+      </StyledCheckbox>
+      <StyledText>{props.title}</StyledText>
+    </StyledTouchableView>
   </ContainerView>
 );
+
+const StyledTouchableView = styled.TouchableOpacity`
+  flex-direction: row;
+`;
 
 const ContainerView = styled.View`
   flex-direction: row;

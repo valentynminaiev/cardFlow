@@ -7,8 +7,9 @@ import infoTip from "../../assets/images/info-tip.png";
 import arrowRight from "../../assets/images/arrow-right.png";
 
 const ContainerView = styled.View`
-  border-bottom-width: ${StyleSheet.hairlineWidth};
-  border-bottom-color: ${gray};
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 `;
 
 const ContainerScrollView = styled.ScrollView`
@@ -39,7 +40,7 @@ const ColorView = styled.View`
 export default props => (
   <ContainerView>
     <LabelText>Color:</LabelText>
-    <ContainerScrollView horizontal showsHorizontalScrollIndicator={false}>
+    <ContainerView>
       <ColorView />
       <ColorView />
       <ColorView />
@@ -48,6 +49,6 @@ export default props => (
       <ColorView />
       <ColorView />
       <ColorView />
-    </ContainerScrollView>
+    </ContainerView>
   </ContainerView>
 );
