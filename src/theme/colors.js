@@ -1,4 +1,5 @@
 export const primaryBlack = "#22292E";
+export const yellow = "#FFB144";
 export const gray = "#8394A3";
 export const blue = "#0A60FF";
 export const backgroundGray = "#F7F8F9";
