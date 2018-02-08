@@ -1,23 +1,18 @@
 import React from "react";
-import { View, Text } from "react-native";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { defaultSize, defaultMargin } from "../../theme/fonts";
 import { primaryBlack, gray } from "../../theme/colors";
-
-const StyledView = styled.View``;
 
 const StyledText = styled.Text`
   color: ${props => (props.secondary ? gray : primaryBlack)};
-  fontWeight: ${props => (props.primary ? "bold" : "normal")};
-  fontSize: 36;
-  textAlign: center;
+  font-weight: ${props => (props.primary ? "bold" : "normal")};
+  font-size: ${defaultSize};
+  margin-bottom: ${defaultMargin};
+  text-align: center;
 `;
 
-export default props => (
-  <StyledView>
-    <StyledText {...props}>{props.children}</StyledText>
-  </StyledView>
-);
+export default props => <StyledText {...props}>{props.children}</StyledText>;
 
 StyledText.propTypes = {
   children: PropTypes.string.isRequired
