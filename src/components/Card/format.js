@@ -6,7 +6,7 @@ export const formatCreditCardNumber = val => {
   for (i = 0, len = match.length; i < len; i += 4) {
     parts.push(match.substring(i, i + 4));
   }
-  return parts.length ? parts.join(" ") : val;
+  return parts.length ? parts.join(" ") : v;
 };
 
 export const formatExpDate = val => {

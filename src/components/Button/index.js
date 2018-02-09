@@ -7,6 +7,7 @@ import { white, blue } from "../../theme/colors";
 
 const StyledView = styled.TouchableOpacity`
   background-color: ${props => props.color || "transparent"};
+  opacity: ${props => (props.disabled ? 0.5 : 1)};
   border-width: 1;
   border-color: ${props => props.color || blue};
   border-radius: ${props => (props.rounded ? 55 : 10)};

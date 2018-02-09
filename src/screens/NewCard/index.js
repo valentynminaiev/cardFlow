@@ -36,9 +36,11 @@ export default class NewCard extends React.Component {
   };
 
   handleAddToCard = () => {
+    const { selectedCurrency } = this.state;
     const { navigate } = this.props.navigation;
-
-    navigate("VerifyCard");
+    selectedCurrency
+      ? navigate("VerifyCard")
+      : Alert.alert("Error", "Please fill the required field");
   };
 
   handleColorSelect = selectedColor => {

@@ -98,7 +98,6 @@ export default class Card extends PureComponent {
       <ViewContainer>
         <Cardholder>
           <ColorOverlay color={color} />
-          <CardText>{cardNumber}</CardText>
           <Input
             large
             placeholder="0000 0000 0000 0000"
