@@ -7,6 +7,7 @@ import Text from "../../components/Text";
 import StyledButton from "../../components/Button";
 import Button from "../../components/Button";
 import currencies from "./currenciesData";
+import { BackButton, CardButton } from "../../navigationConfig";
 import { doubleMargin, defaultMargin } from "../../theme/fonts";
 import { white, yellow } from "../../theme/colors";
 
@@ -23,15 +24,11 @@ const ButtonContainer = styled.View`
 `;
 
 export default class CurrenciesList extends React.Component {
-  static navigationOptions = {
-    title: "Currencies"
-  };
-
   constructor(props) {
     super(props);
 
     this.state = {
-      selectedCurrency: ""
+      selectedCurrency: {}
     };
   }
 
@@ -41,11 +38,12 @@ export default class CurrenciesList extends React.Component {
     });
   };
 
-  handleCurrencyChoose = () => {
+  handleChoose = () => {
     const { selectedCurrency } = this.state;
-    const { replace } = this.props.navigation;
-
-    replace("NewCard", { currency: selectedCurrency.title });
+    const { state, pop } = this.props.navigation;
+    const { onCurrencyUpdate } = state.params;
+    onCurrencyUpdate(selectedCurrency);
+    pop();
   };
 
   render() {
@@ -68,7 +66,7 @@ export default class CurrenciesList extends React.Component {
             {currencies.all.map(currency => (
               <CheckboxRow
                 key={currency.id}
-                checked={selectedCurrency === currency.id}
+                checked={selectedCurrency.id === currency.id}
                 onPress={this.handleSelect}
                 {...currency}
               />
@@ -76,12 +74,7 @@ export default class CurrenciesList extends React.Component {
           </SettinsSection>
         </StyledScrollView>
         <ButtonContainer>
-          <Button
-            absolute
-            rounded
-            color={yellow}
-            onPress={this.handleCurrencyChoose}
-          >
+          <Button absolute rounded color={yellow} onPress={this.handleChoose}>
             Choose currency
           </Button>
         </ButtonContainer>
@@ -89,3 +82,9 @@ export default class CurrenciesList extends React.Component {
     );
   }
 }
+
+CurrenciesList.navigationOptions = ({ navigation }) => ({
+  title: "Currencies",
+  headerLeft: <BackButton onPress={() => navigation.goBack()} />,
+  headerRight: <CardButton onPress={() => navigation.goBack()} />
+});

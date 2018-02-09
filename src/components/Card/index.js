@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { Image } from "react-native";
+import { Image, TextInput, InteractionManager } from "react-native";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import Container from "../Container";
@@ -7,7 +7,6 @@ import Input from "../Input";
 import Text from "../Text";
 import { defaultMargin, doubleMargin } from "../../theme/fonts";
 import { backgroundGray, primaryBlack } from "../../theme/colors";
-import card from "../../assets/images/card.png";
 import { formatCreditCardNumber, formatExpDate } from "./format";
 
 const ViewContainer = styled.View`
@@ -51,7 +50,7 @@ const ColorOverlay = styled.View`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: ${props => props.color};
+  background-color: ${props => props.color || "rgba(0, 0, 0, 0.1)"};
   z-index: -1;
 `;
 
@@ -68,8 +67,17 @@ export default class Card extends PureComponent {
     this.state = {
       cardNumber: null,
       expDate: null,
-      cvv: null
+      cvv: null,
+      color: null
     };
+  }
+
+  componentDidMount() {
+    if (!this.state.cardNumber) {
+      InteractionManager.runAfterInteractions(() => {
+        this.textInput.focus();
+      });
+    }
   }
 
   onCardNumberInput = text => {
@@ -83,14 +91,14 @@ export default class Card extends PureComponent {
   onCVVInput = cvv => this.setState({ cvv });
 
   render() {
+    const { color } = this.props;
     const { cardNumber, expDate, cvv } = this.state;
+
     return (
       <ViewContainer>
         <Cardholder>
-          <ImageBackground source={card} />
-          <ColorOverlay color="rgba(0, 0, 0, 0.1)" />
-          {/* <CardText>{cardNumber}</CardText> */}
-          {/* <ImageBackground source={card}> */}
+          <ColorOverlay color={color} />
+          <CardText>{cardNumber}</CardText>
           <Input
             large
             placeholder="0000 0000 0000 0000"
@@ -98,6 +106,9 @@ export default class Card extends PureComponent {
             returnKeyType="done"
             onChangeText={this.onCardNumberInput}
             value={cardNumber}
+            inputRef={el => (this.textInput = el)}
+            onSubmitEditing={() => this.expDateInput.focus()}
+            underlineColorAndroid={"transparent"}
           />
           <BottomRow>
             <Input
@@ -108,6 +119,9 @@ export default class Card extends PureComponent {
               returnKeyType="done"
               onChangeText={this.onExpDateInput}
               value={expDate}
+              inputRef={el => (this.expDateInput = el)}
+              onSubmitEditing={() => this.cvvInput.focus()}
+              underlineColorAndroid={"transparent"}
             />
             <Input
               label="CVV"
@@ -117,9 +131,10 @@ export default class Card extends PureComponent {
               returnKeyType="done"
               onChangeText={this.onCVVInput}
               value={cvv}
+              inputRef={el => (this.cvvInput = el)}
+              underlineColorAndroid={"transparent"}
             />
           </BottomRow>
-          {/* </ImageBackground> */}
         </Cardholder>
       </ViewContainer>
     );

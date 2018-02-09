@@ -11,7 +11,7 @@ export default props => (
   <ContainerView>
     <LabelView>
       <LabelText>{props.label}</LabelText>
-      <PressView>
+      <PressView onPress={props.onTooltipPress}>
         <StyledImage source={infoTip} />
       </PressView>
     </LabelView>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { PureComponent } from "react";
 import { View, Text } from "react-native";
 import styled from "styled-components";
 import PropTypes from "prop-types";
@@ -16,13 +16,20 @@ const StyledTextInput = styled.TextInput`
   font-size: ${props => (props.large ? large : defaultSize)};
 `;
 
-export default props => (
-  <StyledView>
-    {props.label && <StyledLabel>{props.label}</StyledLabel>}
-    <StyledTextInput
-      placeholderTextColor={primaryBlack}
-      maxLength={props.maxLength || 19}
-      {...props}
-    />
-  </StyledView>
-);
+export default class Input extends PureComponent {
+  render() {
+    const { inputRef, label, maxLength } = this.props;
+
+    return (
+      <StyledView>
+        {label && <StyledLabel>{label}</StyledLabel>}
+        <StyledTextInput
+          placeholderTextColor={primaryBlack}
+          maxLength={maxLength || 19}
+          {...this.props}
+          innerRef={inputRef}
+        />
+      </StyledView>
+    );
+  }
+}

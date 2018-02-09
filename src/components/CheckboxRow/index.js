@@ -21,6 +21,8 @@ export default props => (
 
 const StyledTouchableView = styled.TouchableOpacity`
   flex-direction: row;
+  width: 100%;
+  padding-vertical: 20;
 `;
 
 const ContainerView = styled.View`
@@ -29,7 +31,6 @@ const ContainerView = styled.View`
   align-items: center;
   border-bottom-width: ${StyleSheet.hairlineWidth};
   border-bottom-color: ${gray};
-  padding-vertical: 20;
 `;
 
 const StyledCheckbox = styled.View`
