@@ -6,6 +6,7 @@ import StyledButton from "../../components/Button";
 import cardError from "../../assets/images/card-error.png";
 import { doubleMargin } from "../../theme/fonts";
 import { yellow } from "../../theme/colors";
+import { BackButton } from "../../navigationConfig";
 
 const Image = styled.Image`
   margin-bottom: ${doubleMargin};
@@ -40,6 +41,7 @@ export default class VerifyCard extends React.Component {
   }
 }
 
-VerifyCard.navigationOptions = {
-  title: "Card Verification"
-};
+VerifyCard.navigationOptions = ({ navigation }) => ({
+  title: "Card Verification",
+  headerLeft: <BackButton onPress={() => navigation.goBack()} />
+});
