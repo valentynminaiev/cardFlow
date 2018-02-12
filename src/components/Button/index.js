@@ -17,13 +17,13 @@ const StyledView = styled.TouchableOpacity`
   right: 0;
   bottom: ${defaultPadding / 2};
   position: ${props => (props.absolute ? "absolute" : "relative")};
-  margin-horizontal: ${props => (props.absolute ? defaultMargin : 0)};
+  margin-horizontal: ${props => (props.absolute ? "15" : 0)};
 `;
 
 const StyledText = styled.Text`
   color: ${props => (props.color ? white : blue)};
   font-size: ${defaultSize};
-  padding-vertical: ${defaultMargin};
+  padding-vertical: 15;
   text-align: center;
 `;
 

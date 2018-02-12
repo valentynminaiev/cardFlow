@@ -23,7 +23,7 @@ export default class MyCardsScreen extends React.Component {
 
   render() {
     return (
-      <Container center padding>
+      <Container center withPadding>
         <Image source={cardError} />
         <Text primary>The list is empty!</Text>
         <Text secondary>

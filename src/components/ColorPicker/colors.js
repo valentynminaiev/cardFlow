@@ -1,42 +1,50 @@
-export default [
-  {
-    title: "Blue",
-    code: "#2F80ED"
+export default {
+  dodgerBlue: {
+    start: "#2F80ED",
+    end: "#3A7BD5"
   },
-  {
-    title: "Mulberry",
-    code: "#B24592"
+  mulberry: {
+    start: "#B24592",
+    end: "#F15F79"
   },
-  {
-    title: "Violet",
-    code: "#874bca"
+  violetHoneycomb: {
+    start: "#874BCA",
+    end: "#B84C97"
   },
-  {
-    title: "Watermelon",
-    code: "#FF5F6D"
+  watermelon: {
+    start: "#FF5F6D",
+    end: "#FFC371"
   },
-  {
-    title: "Boston Blue",
-    code: "#4CA1AF"
+  bostonBlue: {
+    start: "#4CA1AF",
+    end: "#C4E0E5"
   },
-  {
-    title: "Red",
-    code: "#E73827"
+  orange: {
+    start: "#E73827",
+    end: "#F55C40"
   },
-  {
-    title: "Black",
-    code: "#928DAB"
+  greySuit: {
+    start: "#928DAB",
+    end: "#00D2FF"
   },
-  {
-    title: "Black",
-    code: "#D15F2B"
+  lightBlue: {
+    start: "#64B3F4",
+    end: "#C2E59C"
   },
-  {
-    title: "Black",
-    code: "#64B3F4"
+  goldenDream: {
+    start: "#D15F2B",
+    end: "#F0CB35"
   },
-  {
-    title: "Green",
-    code: "#699C4C"
+  pistachio: {
+    start: "#699C4C",
+    end: "#8DC26F"
+  },
+  deepSkyBlue: {
+    start: "#3A7BD5",
+    end: "#00D2FF"
+  },
+  violet: {
+    start: "#6A3093",
+    end: "#A044FF"
   }
-];
+};

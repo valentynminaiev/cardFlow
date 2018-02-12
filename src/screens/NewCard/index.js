@@ -14,7 +14,13 @@ export default class NewCard extends React.Component {
     super(props);
 
     this.state = {
-      selectedColor: null,
+      selectedColor: {
+        key: null,
+        colors: {
+          start: "#F5F5F5",
+          end: "#FBFBFB"
+        }
+      },
       selectedCurrency: null
     };
   }
@@ -64,8 +70,8 @@ export default class NewCard extends React.Component {
       : "Choose currency";
     return (
       <ScrollView contentContainerStyle={{ flex: 1 }}>
-        <Container padding>
-          <Card color={selectedColor} />
+        <Container withPadding>
+          <Card color={selectedColor.colors} />
           <SettingsRow
             label="Card currency:"
             title={currencyTitle}

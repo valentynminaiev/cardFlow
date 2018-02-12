@@ -8,7 +8,7 @@ const StyledView = styled.View`
   flex: 1;
   justify-content: ${props => (props.center ? "center" : "flex-start")};
   align-items: ${props => (props.center ? "center" : "flex-start")};
-  padding-horizontal: ${props => (props.padding ? defaultMargin : 0)};
+  padding-horizontal: ${props => (props.withPadding ? defaultMargin : 0)};
   background-color: ${props => props.backgroundColor || white};
   flex-direction: ${props => (props.row ? "row" : "column")};
 `;

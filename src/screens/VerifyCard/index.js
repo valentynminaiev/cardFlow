@@ -21,7 +21,7 @@ export default class VerifyCard extends React.Component {
 
   render() {
     return (
-      <Container center padding>
+      <Container center withPadding>
         <Image source={cardError} />
         <Text primary>Card Verification</Text>
         <Text secondary>

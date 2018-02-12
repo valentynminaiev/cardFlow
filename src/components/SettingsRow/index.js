@@ -34,6 +34,7 @@ const PressView = styled.TouchableOpacity``;
 const LabelView = styled.View`
   flex-direction: row;
   align-items: center;
+  margin-bottom: 7;
 `;
 
 const TextView = styled.TouchableOpacity`

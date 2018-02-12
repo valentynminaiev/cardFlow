@@ -14,6 +14,7 @@ const StyledLabel = styled.Text`
 
 const StyledTextInput = styled.TextInput`
   font-size: ${props => (props.large ? large : defaultSize)};
+  color: #22292e;
 `;
 
 export default class Input extends PureComponent {
