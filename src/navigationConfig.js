@@ -53,7 +53,6 @@ export default StackNavigator(
     VerifyCard: { screen: VerifyCardScreen }
   },
   {
-    initialRouteName: "NewCard",
     navigationOptions: ({ navigation }) => ({
       headerStyle: {
         paddingHorizontal: 10

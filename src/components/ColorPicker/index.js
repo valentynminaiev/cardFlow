@@ -36,7 +36,8 @@ var styles = StyleSheet.create({
     marginHorizontal: 3,
     marginVertical: 7,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    transform: [{ rotate: "-90deg" }]
   }
 });
 
@@ -75,8 +76,8 @@ export default ({ selected, onPress }) => (
           onPress={() => onPress({ key, colors: Colors[key] })}
         >
           <LinearGradient
-            start={{ x: 0, y: 0 }}
-            end={{ x: 0.5, y: 1 }}
+            start={{ x: 0.0, y: 0.25 }}
+            end={{ x: 0.5, y: 1.0 }}
             colors={[Colors[key].start, Colors[key].end]}
             style={styles.colorGradient}
           />

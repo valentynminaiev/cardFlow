@@ -38,18 +38,10 @@ export default StyleSheet.create({
     borderRadius: 13,
     ...StyleSheet.absoluteFillObject
   },
-  buttonText: {
-    fontSize: 18,
-    fontFamily: "Gill Sans",
-    textAlign: "center",
-    margin: 10,
-    color: "#ffffff",
-    backgroundColor: "transparent"
-  },
   bottomRow: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginTop: 20,
+    marginTop: 30,
     marginBottom: defaultMargin,
     marginRight: 30
   },

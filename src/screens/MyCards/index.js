@@ -8,6 +8,9 @@ import { doubleMargin } from "../../theme/fonts";
 
 const Image = styled.Image`
   margin-bottom: ${doubleMargin};
+  width: 93;
+  height: 64;
+  resize-mode: contain;
 `;
 
 export default class MyCardsScreen extends React.Component {

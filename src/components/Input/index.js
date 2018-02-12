@@ -10,11 +10,15 @@ const StyledView = styled.View``;
 const StyledLabel = styled.Text`
   font-size: ${labelSize};
   color: ${gray};
+  font-family: "Courier";
 `;
 
 const StyledTextInput = styled.TextInput`
   font-size: ${props => (props.large ? large : defaultSize)};
   color: #22292e;
+  font-family: "Courier";
+  border-bottom-width: 1;
+  border-bottom-color: #007aff;
 `;
 
 export default class Input extends PureComponent {

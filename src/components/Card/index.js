@@ -30,11 +30,11 @@ export default class Card extends PureComponent {
   }
 
   componentDidMount() {
-    // if (!this.state.cardNumber) {
-    //   InteractionManager.runAfterInteractions(() => {
-    //     this.textInput.focus();
-    //   });
-    // }
+    if (!this.state.cardNumber) {
+      InteractionManager.runAfterInteractions(() => {
+        this.textInput.focus();
+      });
+    }
   }
 
   onCardNumberInput = text => {
@@ -55,8 +55,8 @@ export default class Card extends PureComponent {
       <View style={s.container}>
         <View style={s.cardHolder}>
           <LinearGradient
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 1 }}
+            start={{ x: 0.0, y: 0.25 }}
+            end={{ x: 0.5, y: 1.0 }}
             colors={[start, end]}
             style={s.linearGradient}
           />
